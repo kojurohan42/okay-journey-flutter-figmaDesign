@@ -8,522 +8,642 @@ class Workerlist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text('Table List'),
-        ),
-        Container(
-          padding: EdgeInsets.all(8.0),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black, // red as border color
-            ),
-            borderRadius: BorderRadius.circular(8.0),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text('Table List'),
           ),
-          child: Table(
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            columnWidths: const {
-              0: FlexColumnWidth(0.2),
-              1: FlexColumnWidth(1),
-              2: FlexColumnWidth(0.55),
-              // 3: FlexColumnWidth(2)
-            },
-            children: [
-              TableRow(children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "S.n.",
+          Container(
+            padding: EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.black, // red as border color
+              ),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Table(
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              columnWidths: const {
+                0: FlexColumnWidth(0.2),
+                1: FlexColumnWidth(1),
+                2: FlexColumnWidth(0.55),
+                // 3: FlexColumnWidth(2)
+              },
+              children: [
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      "S.n.",
+                      style: TextStyle(
+                          fontSize: 12.0, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Text(
+                    "Name",
                     style:
                         TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
                   ),
-                ),
-                Text(
-                  "Name",
-                  style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  "Address",
-                  style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  "Working Status",
-                  style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
-                ),
-              ]),
-              TableRow(children: [
-                SizedBox(
-                  height: 16,
-                  child: Text(
-                    "1",
-                    style: TextStyle(fontSize: 12.0),
+                  Text(
+                    "Address",
+                    style:
+                        TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
                   ),
-                ),
-                SizedBox(
-                  height: 16,
-                  child: Text(
-                    "Sinamagal tube well",
-                    style: TextStyle(fontSize: 12.0),
+                  Text(
+                    "Working Status",
+                    style:
+                        TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold),
                   ),
-                ),
-                SizedBox(
-                  height: 16,
-                  child: Text(
-                    "sinamagal",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 16,
-                  child: ElevatedButton(
-                    onPressed: () => {},
+                ]),
+                TableRow(children: [
+                  SizedBox(
+                    height: 16,
                     child: Text(
-                      'Not Operating',
+                      "1",
                       style: TextStyle(fontSize: 12.0),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      minimumSize: const Size(200, 17),
-                      maximumSize: const Size(200, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Not Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        minimumSize: const Size(200, 16),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: SizedBox(
+                      height: 16,
+                      child: Text(
+                        "2",
+                        style: TextStyle(fontSize: 12.0),
                       ),
                     ),
                   ),
-                )
-              ]),
-              TableRow(children: [
-                Text(
-                  "2",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "Sinamagal tube well",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "sinamagal",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text(
-                    'Operating',
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(200, 20),
-                    maximumSize: const Size(200, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                )
-              ]),
-              TableRow(children: [
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "3",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "Sinamagal tube well",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "sinamagal",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: ElevatedButton(
-                    onPressed: () => {},
+                  SizedBox(
+                    height: 16,
                     child: Text(
-                      'Operating',
+                      "Sinamagal tube well",
                       style: TextStyle(fontSize: 12.0),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      minimumSize: const Size(200, 20),
-                      maximumSize: const Size(200, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 20),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "3",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 16),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: SizedBox(
+                      height: 16,
+                      child: Text(
+                        "4",
+                        style: TextStyle(fontSize: 12.0),
                       ),
                     ),
                   ),
-                )
-              ]),
-              TableRow(children: [
-                Text(
-                  "4",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "Sinamagal tube well",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "sinamagal",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text(
-                    'Operating',
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(200, 20),
-                    maximumSize: const Size(200, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
                     ),
                   ),
-                )
-              ]),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Container(
-          padding: EdgeInsets.all(8.0),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black, // red as border color
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 20),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+              ],
             ),
-            borderRadius: BorderRadius.circular(8.0),
           ),
-          child: Table(
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            columnWidths: const {
-              0: FlexColumnWidth(0.2),
-              1: FlexColumnWidth(1),
-              2: FlexColumnWidth(0.55),
-              // 3: FlexColumnWidth(2)
-            },
-            children: [
-              TableRow(children: [
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "1",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "Sinamagal tube well",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "sinamagal",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: ElevatedButton(
-                    onPressed: () => {},
-                    child: Text(
-                      'Not Operating',
-                      style: TextStyle(fontSize: 12.0),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      minimumSize: const Size(200, 20),
-                      maximumSize: const Size(200, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                )
-              ]),
-              TableRow(children: [
-                Text(
-                  "2",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "Sinamagal tube well",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "sinamagal",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text(
-                    'Operating',
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(200, 20),
-                    maximumSize: const Size(200, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                )
-              ]),
-              TableRow(children: [
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "3",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "Sinamagal tube well",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "sinamagal",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: ElevatedButton(
-                    onPressed: () => {},
-                    child: Text(
-                      'Operating',
-                      style: TextStyle(fontSize: 12.0),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      minimumSize: const Size(200, 20),
-                      maximumSize: const Size(200, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                )
-              ]),
-              TableRow(children: [
-                Text(
-                  "4",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "Sinamagal tube well",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "sinamagal",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text(
-                    'Operating',
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(200, 20),
-                    maximumSize: const Size(200, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                )
-              ]),
-            ],
+          SizedBox(
+            height: 10,
           ),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Container(
-          padding: EdgeInsets.all(8.0),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black, // red as border color
+          Container(
+            padding: EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.black, // red as border color
+              ),
+              borderRadius: BorderRadius.circular(8.0),
             ),
-            borderRadius: BorderRadius.circular(8.0),
+            child: Table(
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              columnWidths: const {
+                0: FlexColumnWidth(0.2),
+                1: FlexColumnWidth(1),
+                2: FlexColumnWidth(0.55),
+                // 3: FlexColumnWidth(2)
+              },
+              children: [
+                TableRow(children: [
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "1",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Not Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        minimumSize: const Size(200, 16),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: SizedBox(
+                      height: 16,
+                      child: Text(
+                        "2",
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 20),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "3",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 16),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: SizedBox(
+                      height: 16,
+                      child: Text(
+                        "4",
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 20),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+              ],
+            ),
           ),
-          child: Table(
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            columnWidths: const {
-              0: FlexColumnWidth(0.2),
-              1: FlexColumnWidth(1),
-              2: FlexColumnWidth(0.55),
-              // 3: FlexColumnWidth(2)
-            },
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            padding: EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.black, // red as border color
+              ),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Table(
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              columnWidths: const {
+                0: FlexColumnWidth(0.2),
+                1: FlexColumnWidth(1),
+                2: FlexColumnWidth(0.55),
+                // 3: FlexColumnWidth(2)
+              },
+              children: [
+                TableRow(children: [
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "1",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Not Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        minimumSize: const Size(200, 16),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: SizedBox(
+                      height: 16,
+                      child: Text(
+                        "2",
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 20),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "3",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 16),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: SizedBox(
+                      height: 16,
+                      child: Text(
+                        "4",
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "Sinamagal tube well",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: Text(
+                      "sinamagal",
+                      style: TextStyle(fontSize: 12.0),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                    child: ElevatedButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Operating',
+                        style: TextStyle(fontSize: 12.0),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(200, 20),
+                        maximumSize: const Size(200, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 70,
+          ),
+          Row(
             children: [
-              TableRow(children: [
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "1",
-                    style: TextStyle(fontSize: 12.0),
+              SizedBox(
+                width: 230,
+              ),
+              ElevatedButton(
+                onPressed: () => {},
+                child: Text(
+                  'Explore Here',
+                  style: TextStyle(fontSize: 16.0),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 62, 42, 151),
+                  minimumSize: const Size(150, 40),
+                  maximumSize: const Size(150, 40),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "Sinamagal tube well",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "sinamagal",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: ElevatedButton(
-                    onPressed: () => {},
-                    child: Text(
-                      'Not Operating',
-                      style: TextStyle(fontSize: 12.0),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      minimumSize: const Size(200, 20),
-                      maximumSize: const Size(200, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                )
-              ]),
-              TableRow(children: [
-                Text(
-                  "2",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "Sinamagal tube well",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "sinamagal",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text(
-                    'Operating',
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(200, 20),
-                    maximumSize: const Size(200, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                )
-              ]),
-              TableRow(children: [
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "3",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "Sinamagal tube well",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: Text(
-                    "sinamagal",
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                  child: ElevatedButton(
-                    onPressed: () => {},
-                    child: Text(
-                      'Operating',
-                      style: TextStyle(fontSize: 12.0),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      minimumSize: const Size(200, 20),
-                      maximumSize: const Size(200, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ),
-                )
-              ]),
-              TableRow(children: [
-                Text(
-                  "4",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "Sinamagal tube well",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  "sinamagal",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text(
-                    'Operating',
-                    style: TextStyle(fontSize: 12.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: const Size(200, 20),
-                    maximumSize: const Size(200, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                )
-              ]),
+              )
             ],
-          ),
-        ),
-      ],
+          )
+        ],
+      ),
     );
   }
 }

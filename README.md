@@ -6,5 +6,5 @@ a flutter project designing the figma design provided by Okay Journey for intern
 This is the final result of the assignment.
 
 
-![Screenshot](assets/result.png)
+![Screenshot](assets/result2.png)
 

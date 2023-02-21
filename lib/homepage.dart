@@ -17,32 +17,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Header(),
-            SingleChildScrollView(child: Workerlist()),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 230,
-                ),
-                ElevatedButton(
-                  onPressed: () => {},
-                  child: Text(
-                    'Explore Here',
-                    style: TextStyle(fontSize: 16.0),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 62, 42, 151),
-                    minimumSize: const Size(150, 40),
-                    maximumSize: const Size(150, 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                )
-              ],
-            )
+            Workerlist(),
           ],
         ),
       )),
